@@ -33,10 +33,20 @@ Luffy ingin meminta kalian untuk membuat topologi tersebut menggunakan teknik CI
 ## Soal C
 Melakukan Routing agar setiap perangkat pada jaringan tersebut dapat terhubung.
 
-## Soal D
-Selanjutnya memberikan ip pada subnet Blueno, Cipher, Fukurou, dan Elena secara dinamis menggunakan bantuan DHCP server. Kemudian setting DHCP Relay pada router yang menghubungkannya.
+```
+route add -net 192.218.7.0 netmask 255.255.255.128 gw 192.218.7.146 #BLUENO
+route add -net 192.218.0.0 netmask 255.255.252.0 gw 192.218.7.146 #CIPHER
+route add -net 192.218.7.128 netmask 255.255.255.248 gw 192.218.7.146 #DORIKI & JIPANGU
+
+route add -net 192.218.4.0 netmask 255.255.254.0 gw 192.218.7.150 #ELENA
+route add -net 192.218.6.0 netmask 255.255.255.0 gw 192.218.7.150 #FUKORO
+route add -net 192.218.7.136 netmask 255.255.255.248 gw 192.218.7.150 #Maingate & Jourge
+```
 
 ![routing](image/routing.png)
+
+## Soal D
+Selanjutnya memberikan ip pada subnet Blueno, Cipher, Fukurou, dan Elena secara dinamis menggunakan bantuan DHCP server. Kemudian setting DHCP Relay pada router yang menghubungkannya.
 
 ### Setting DHCP-Relay
 Melakukan instalasi isc-dhcp-relay dan lakukan config pada `/etc/default/isc-dhcp-relay` pada Foosha, Water7 dan Guanhao:
