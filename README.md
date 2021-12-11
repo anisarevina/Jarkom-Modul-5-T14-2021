@@ -162,6 +162,8 @@ Karena kelompok kalian maksimal terdiri dari 3 orang. Luffy meminta kalian untuk
 iptables -A INPUT -p icmp -m connlimit --connlimit-above 3 --connlimit-mask 0 -j DROP
 ```
 
+![koneksi-ICMP](image/koneksi-ICMP.png)
+
 ## No. 4
 Akses dari subnet Blueno dan Cipher hanya diperbolehkan pada pukul 07.00 - 15.00 pada hari Senin sampai Kamis.
 
